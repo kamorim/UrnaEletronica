@@ -28,13 +28,13 @@ import javax.validation.constraints.NotNull;
     , @NamedQuery(name = "Votacaogovernador.findByVotocomputadogovernador", query = "SELECT v FROM Votacaogovernador v WHERE v.votocomputadogovernador = :votocomputadogovernador")
     , @NamedQuery(name = "Votacaogovernador.findByVotobrancogovernador", query = "SELECT v FROM Votacaogovernador v WHERE v.votobrancogovernador = :votobrancogovernador")
     , @NamedQuery(name = "Votacaogovernador.findByVotonulogovernador", query = "SELECT v FROM Votacaogovernador v WHERE v.votonulogovernador = :votonulogovernador")})
-public class Votacaogovernador implements Serializable {
+public class VotacaoGovernador implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IDVOTACAOGOVERNADOR")
+    @Column(name = "IDVOTACAOGOVERNADOR")    
     private Integer idvotacaogovernador;
     @Basic(optional = false)
     @NotNull
@@ -53,14 +53,14 @@ public class Votacaogovernador implements Serializable {
     @Column(name = "VOTONULOGOVERNADOR")
     private int votonulogovernador;
 
-    public Votacaogovernador() {
+    public VotacaoGovernador() {
     }
 
-    public Votacaogovernador(Integer idvotacaogovernador) {
+    public VotacaoGovernador(Integer idvotacaogovernador) {
         this.idvotacaogovernador = idvotacaogovernador;
     }
 
-    public Votacaogovernador(Integer idvotacaogovernador, int idgovernador, int votocomputadogovernador, int votobrancogovernador, int votonulogovernador) {
+    public VotacaoGovernador(Integer idvotacaogovernador, int idgovernador, int votocomputadogovernador, int votobrancogovernador, int votonulogovernador) {
         this.idvotacaogovernador = idvotacaogovernador;
         this.idgovernador = idgovernador;
         this.votocomputadogovernador = votocomputadogovernador;
@@ -118,10 +118,10 @@ public class Votacaogovernador implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Votacaogovernador)) {
+        if (!(object instanceof VotacaoGovernador)) {
             return false;
         }
-        Votacaogovernador other = (Votacaogovernador) object;
+        VotacaoGovernador other = (VotacaoGovernador) object;
         if ((this.idvotacaogovernador == null && other.idvotacaogovernador != null) || (this.idvotacaogovernador != null && !this.idvotacaogovernador.equals(other.idvotacaogovernador))) {
             return false;
         }

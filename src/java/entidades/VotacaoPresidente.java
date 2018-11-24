@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
     , @NamedQuery(name = "Votacaopresidente.findByVotocomputadopresidente", query = "SELECT v FROM Votacaopresidente v WHERE v.votocomputadopresidente = :votocomputadopresidente")
     , @NamedQuery(name = "Votacaopresidente.findByVotobrancopresidente", query = "SELECT v FROM Votacaopresidente v WHERE v.votobrancopresidente = :votobrancopresidente")
     , @NamedQuery(name = "Votacaopresidente.findByVotonulopresidente", query = "SELECT v FROM Votacaopresidente v WHERE v.votonulopresidente = :votonulopresidente")})
-public class Votacaopresidente implements Serializable {
+public class VotacaoPresidente implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -53,14 +53,14 @@ public class Votacaopresidente implements Serializable {
     @Column(name = "VOTONULOPRESIDENTE")
     private int votonulopresidente;
 
-    public Votacaopresidente() {
+    public VotacaoPresidente() {
     }
 
-    public Votacaopresidente(Integer idvotacaopresidente) {
+    public VotacaoPresidente(Integer idvotacaopresidente) {
         this.idvotacaopresidente = idvotacaopresidente;
     }
 
-    public Votacaopresidente(Integer idvotacaopresidente, int idpresidente, int votocomputadopresidente, int votobrancopresidente, int votonulopresidente) {
+    public VotacaoPresidente(Integer idvotacaopresidente, int idpresidente, int votocomputadopresidente, int votobrancopresidente, int votonulopresidente) {
         this.idvotacaopresidente = idvotacaopresidente;
         this.idpresidente = idpresidente;
         this.votocomputadopresidente = votocomputadopresidente;
@@ -118,10 +118,10 @@ public class Votacaopresidente implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Votacaopresidente)) {
+        if (!(object instanceof VotacaoPresidente)) {
             return false;
         }
-        Votacaopresidente other = (Votacaopresidente) object;
+        VotacaoPresidente other = (VotacaoPresidente) object;
         if ((this.idvotacaopresidente == null && other.idvotacaopresidente != null) || (this.idvotacaopresidente != null && !this.idvotacaopresidente.equals(other.idvotacaopresidente))) {
             return false;
         }

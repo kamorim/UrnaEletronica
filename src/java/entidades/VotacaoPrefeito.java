@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
     , @NamedQuery(name = "Votacaoprefeito.findByVotocomputadoprefeito", query = "SELECT v FROM Votacaoprefeito v WHERE v.votocomputadoprefeito = :votocomputadoprefeito")
     , @NamedQuery(name = "Votacaoprefeito.findByVotobrancoprefeito", query = "SELECT v FROM Votacaoprefeito v WHERE v.votobrancoprefeito = :votobrancoprefeito")
     , @NamedQuery(name = "Votacaoprefeito.findByVotonuloprefeito", query = "SELECT v FROM Votacaoprefeito v WHERE v.votonuloprefeito = :votonuloprefeito")})
-public class Votacaoprefeito implements Serializable {
+public class VotacaoPrefeito implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -53,14 +53,14 @@ public class Votacaoprefeito implements Serializable {
     @Column(name = "VOTONULOPREFEITO")
     private int votonuloprefeito;
 
-    public Votacaoprefeito() {
+    public VotacaoPrefeito() {
     }
 
-    public Votacaoprefeito(Integer idvotacaoprefeito) {
+    public VotacaoPrefeito(Integer idvotacaoprefeito) {
         this.idvotacaoprefeito = idvotacaoprefeito;
     }
 
-    public Votacaoprefeito(Integer idvotacaoprefeito, int idprefeito, int votocomputadoprefeito, int votobrancoprefeito, int votonuloprefeito) {
+    public VotacaoPrefeito(Integer idvotacaoprefeito, int idprefeito, int votocomputadoprefeito, int votobrancoprefeito, int votonuloprefeito) {
         this.idvotacaoprefeito = idvotacaoprefeito;
         this.idprefeito = idprefeito;
         this.votocomputadoprefeito = votocomputadoprefeito;
@@ -118,10 +118,10 @@ public class Votacaoprefeito implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Votacaoprefeito)) {
+        if (!(object instanceof VotacaoPrefeito)) {
             return false;
         }
-        Votacaoprefeito other = (Votacaoprefeito) object;
+        VotacaoPrefeito other = (VotacaoPrefeito) object;
         if ((this.idvotacaoprefeito == null && other.idvotacaoprefeito != null) || (this.idvotacaoprefeito != null && !this.idvotacaoprefeito.equals(other.idvotacaoprefeito))) {
             return false;
         }

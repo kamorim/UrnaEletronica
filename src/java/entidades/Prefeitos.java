@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -37,6 +38,19 @@ public class Prefeitos implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "IDPREFEITO")
+    
+    //Um Prefeito só pode estar vinculado à um partido
+    @OneToOne
+    private Partidos partidoPrefeito;
+    
+    //Um voto só pode estar vinculado à um (ou nenhum) candidato
+    @OneToOne
+    private VotacaoPrefeito votosParaPrefeito;
+    
+    //Um prefeito pode ser somente uma pessoa
+    @OneToOne
+    private Pessoas pessoaPrefeito;
+    
     private Integer idprefeito;
     @Basic(optional = false)
     @NotNull

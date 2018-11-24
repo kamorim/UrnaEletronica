@@ -1,12 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Eleições 2018</title>
+        <link rel="StyleSheet" type="text/css" href="css/estilosVotacao.css" media="screen"/>        
     </h:head>
-    <h:body>
-        Hello from Facelets
+    <h:body> 
+        <h:graphicImage library="images" name="logo_usj.png"/>
+        <br></br>
+        <h:outputText value="Votação: Reitoria USJ 2018" styleClass="title"/>
+        <br></br> 
+        <br></br>
+
+        <h:form>
+            <h:outputText value="Selecione seu candidato:" styleClass="text-top"/>
+            <br></br>
+            <p:selectOneMenu id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
+               <f:selectItem itemLabel="Nome do candidato" itemValue="" />
+                <f:selectItems value="#{votacaoBean.listaCandidatos}" />
+            </p:selectOneMenu>
+            <br></br>
+            <p:commandButton value="Votar!" action="#{votacaoBean.selecionar()}" styleClass="bottom" />
+        </h:form>
     </h:body>
 </html>
-
