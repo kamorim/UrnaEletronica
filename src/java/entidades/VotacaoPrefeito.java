@@ -54,8 +54,8 @@ public class VotacaoPrefeito implements Serializable {
     private int votonuloprefeito;
 
     public VotacaoPrefeito() {
-    }
-
+    }         
+            
     public VotacaoPrefeito(Integer idvotacaoprefeito) {
         this.idvotacaoprefeito = idvotacaoprefeito;
     }
@@ -84,7 +84,7 @@ public class VotacaoPrefeito implements Serializable {
         this.idprefeito = idprefeito;
     }
 
-    public int getVotocomputadoprefeito() {
+    public int getVotocomputadoprefeito() {        
         return votocomputadoprefeito;
     }
 

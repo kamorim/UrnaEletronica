@@ -16,6 +16,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Persistence;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -31,9 +32,15 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Usuarios.findByIdpessoa", query = "SELECT u FROM Usuarios u WHERE u.idpessoa = :idpessoa")
     , @NamedQuery(name = "Usuarios.findByCpfusuario", query = "SELECT u FROM Usuarios u WHERE u.cpfusuario = :cpfusuario")
     , @NamedQuery(name = "Usuarios.findByTeelefoneusuario", query = "SELECT u FROM Usuarios u WHERE u.teelefoneusuario = :teelefoneusuario")
-    , @NamedQuery(name = "Usuarios.findByEmailusuario", query = "SELECT u FROM Usuarios u WHERE u.emailusuario = :emailusuario")})
+    , @NamedQuery(name = "Usuarios.findByEmailusuario", query = "SELECT u FROM Usuarios u WHERE u.emailusuario = :emailusuario")
+    , @NamedQuery(name = "Usuario.findByCPFeSenha", query = "SELECT u FROM Usuarios u"
+                        + "WHERE u.cpfusuario = :cpf AND u.senha = :senha")})
+
 public class Usuarios implements Serializable {
 
+    @Transient
+    public static final String FIND_BY_CPF_SENHA = "Usuarios.findByCPFeSenha";   
+    
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
