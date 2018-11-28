@@ -13,30 +13,57 @@
         <br></br> 
         <br></br>
 
-        
-<!--<h:form>
-            <outputText value="Selecione seu candidato a Prefeito:" styleClass="text-top"/>
-            <br></br>
-            <select id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
-               <f:selectItem itemLabel="Nome do candidato" itemValue="" />
-                <f:selectItems value="#{votacaoBean.listaCandidatos}" />
-            </p:selectOneMenu>
-            <br></br>
-             <h:outputText value="Selecione seu candidato a Governador:" styleClass="text-top"/>
-            <br></br>
-            <p:selectOneMenu id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
-               <f:selectItem itemLabel="Nome do candidato" itemValue="" />
-                <f:selectItems value="#{votacaoBean.listaCandidatos}" />
-            </p:selectOneMenu>
-            <br></br>
-             <h:outputText value="Selecione seu candidato a Presidente:" styleClass="text-top"/>
-            <br></br>
-            <p:selectOneMenu id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
-               <f:selectItem itemLabel="Nome do candidato" itemValue="" />
-                <f:selectItems value="#{votacaoBean.listaCandidatos}" />
-            </p:selectOneMenu>
-            <br></br>
-            <p:commandButton value="Votar!" action="#{votacaoBean.selecionar()}" styleClass="bottom" />
-        </h:form>-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPresidente" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Presidente
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" value="#{presidenteBean.candidatos}" required="true">Nome do candidato</a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownGovernador" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Governador
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" value="#{governadorBean.candidatos}" required="true">Nome do candidato</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPrefeito" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Prefeito
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" value="#{prefeitoBean.candidatos}" required="true">Nome do candidato</a>
+                </div>
+            </div>
+            
+            <div>
+                <button type="button" class="btn btn-primary btn-lg" action="#{votacaoBean.votar}">Votar!</button>                
+            </div>
+                
+            <!--<h:form>
+                        <outputText value="Selecione seu candidato a Prefeito:" styleClass="text-top"/>
+                        <br></br>
+                        <select id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
+                           <f:selectItem itemLabel="Nome do candidato" itemValue="" />
+                            <f:selectItems value="#{votacaoBean.listaCandidatos}" />
+                        </p:selectOneMenu>
+                        <br></br>
+                         <h:outputText value="Selecione seu candidato a Governador:" styleClass="text-top"/>
+                        <br></br>
+                        <p:selectOneMenu id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
+                           <f:selectItem itemLabel="Nome do candidato" itemValue="" />
+                            <f:selectItems value="#{votacaoBean.listaCandidatos}" />
+                        </p:selectOneMenu>
+                        <br></br>
+                         <h:outputText value="Selecione seu candidato a Presidente:" styleClass="text-top"/>
+                        <br></br>
+                        <p:selectOneMenu id="opcoes" value="#{votacaoBean.valorSelecionado}" style="width:185px">
+                           <f:selectItem itemLabel="Nome do candidato" itemValue="" />
+                            <f:selectItems value="#{votacaoBean.listaCandidatos}" />
+                        </p:selectOneMenu>
+                        <br></br>
+                        <p:commandButton value="Votar!" action="#{votacaoBean.selecionar()}" styleClass="bottom" />
+                    </h:form>-->
     </body>
 </html>

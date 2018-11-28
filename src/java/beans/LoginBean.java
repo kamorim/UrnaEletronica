@@ -5,6 +5,7 @@
  */
 package beans;
 
+import java.io.Serializable;
 import java.util.jar.Pack200;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
@@ -19,7 +20,7 @@ import negocio.UsuarioService;
  */
 @ManagedBean
 @SessionScoped
-public class LoginBean {
+public class LoginBean implements Serializable {
     
     private int cpf;
     private String senha;

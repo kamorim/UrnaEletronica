@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+        <title>Apuração</title>
+    </head>
+    <body>
+        <div>
+           <label>Presidente</label>        
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos válidos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPresidenteBean.votosComputadosPresidente}" required="true">votosComputadosPresidente</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos brancos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPresidenteBean.votosBrancosPresidente}" required="true">votosBrancosPresidente</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos nulos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPresidenteBean.votosNulosPresidente}" required="true">votosNulosPresidente</span>
+            </li>
+        </ul> 
+        </div>
+        <div>
+           <label>Governador</label>        
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos válidos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoGovernadorBean.votosComputadosGovernador}" required="true">votosComputadosGovernador</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos brancos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoGovernadorBean.votosBrancosGovernador}" required="true">votosBrancosGovernador</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos nulos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoGovernadorBean.votosNulosGovernador}" required="true">votosNulosGovernador</span>
+            </li>
+        </ul> 
+        </div>
+        <div>
+           <label>Prefeito</label>        
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos válidos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPrefeitoBean.votosComputadosPrefeito}" required="true">votosComputadosPrefeito</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos brancos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPrefeitoBean.votosBrancosPrefeito}" required="true">votosBrancosPrefeito</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Votos nulos:
+                <span class="badge badge-primary badge-pill" value="#{votacaoPrefeitoBean.votosNulosPrefeito}" required="true">votosNulosPrefeito</span>
+            </li>
+        </ul> 
+        </div>
+    </body>
+</html>
+

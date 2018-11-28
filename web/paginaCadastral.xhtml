@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+        <title>Cadastre-se</title>
+    </head>
+    <body>
+        <form>
+            <div class="form-group">
+                <label>Cadastro de eleitor</label>
+                <input type="text" class="form-control" id="nomeUsuario" aria-describedby="nomeHelp" placeholder="Nome" value="#{usuarioBean.nome}" required="true"/>
+                <input type="text" class="form-control" id="sobrenomeUsuario" aria-describedby="sobrenomeHelp" placeholder="Sobrenome" value="#{usuarioBean.sobrenome}" required="true"/>    
+                <input type="number" class="form-control" id="cpfUsuario" aria-describedby="cpfCadastroHelp" placeholder="CPF" value="#{usuarioBean.cpf}" required="true"/>
+                <input type="number" class="form-control" id="telUsuario" aria-describedby="telCadastroHelp" placeholder="Telefone com DDD" value="#{usuarioBean.telefone}" required="true"/>
+                <small id="loginHelp" class="form-text text-muted">O CPF será seu login no sistema</small>
+                <input type="email" class="form-control" id="email1Usuario" aria-describedby="emailCadastroHelp" placeholder="E-mail"/>
+            </div>
+            <div class="form-group">
+                <label for="InputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="#{usuarioBean.senha}" required="true"/>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg" action="#{usuarioBean.cadastrar}">Cadastrar</button>
+        </form>
+
+        <div class="alert alert-success" role="alerta">
+            <h4 class="alert-heading">Cadastro efetuado com sucesso!</h4>
+            <p>Seus dados foram salvos com sucesso!</p>
+            <hr>
+                <p class="mb-0">Clique <a href=”login”>aqui</a> para retornar à página inicial</p>
+        </div>
+
+    </body>
+</html>
+
