@@ -30,19 +30,21 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u")
     , @NamedQuery(name = "Usuarios.findByIsuduario", query = "SELECT u FROM Usuarios u WHERE u.isuduario = :isuduario")
     , @NamedQuery(name = "Usuarios.findByIdpessoa", query = "SELECT u FROM Usuarios u WHERE u.idpessoa = :idpessoa")
-    , @NamedQuery(name = "Usuarios.findByCpfusuario", query = "SELECT u FROM Usuarios u WHERE u.cpfusuario = :cpfusuario")
+    //, @NamedQuery(name = "Usuarios.findByCpfusuario", query = "SELECT u FROM Usuarios u WHERE u.cpfusuario = :cpfusuario")
     , @NamedQuery(name = "Usuarios.findByTeelefoneusuario", query = "SELECT u FROM Usuarios u WHERE u.teelefoneusuario = :teelefoneusuario")
-    , @NamedQuery(name = "Usuarios.findByEmailusuario", query = "SELECT u FROM Usuarios u WHERE u.emailusuario = :emailusuario")
-    , @NamedQuery(name = "Usuario.findByCPFeSenha", query = "SELECT u FROM Usuarios u"
-                        + "WHERE u.cpfusuario = :cpf AND u.senha = :senha")})
+    , @NamedQuery(name = "Usuarios.findByEmailusuario", query = "SELECT u FROM Usuarios u WHERE u.emailusuario = :emailusuario")})
+    //, @NamedQuery(name = "Usuario.findByCpfusuario", query = "SELECT u FROM Usuarios u"
+                        //+ "WHERE u.cpfusuario = :cpf AND u.senha = :senha")})
 
 public class Usuarios implements Serializable {
 
     @Transient
-    public static final String FIND_BY_CPF_SENHA = "Usuarios.findByCPFeSenha";   
+    public static final String FIND_BY_CPF_SENHA = "Usuarios.findByCpfusuario";   
     
     private static final long serialVersionUID = 1L;
     @Id
+    int idUsuario;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "ISUDUARIO")

@@ -26,9 +26,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author Kin Amorim
  */
     //@WebFilter("/loginFiltro") 
-        public class LoginFiltro implements Filter { 
+        public abstract class LoginFiltro implements Filter { 
     
-            public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException { 
+            /*public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException { 
                 throws IOException, ServletException {
                 
                 LoginBean loginBean = (LoginBean) ((HttpServletRequest)req).getSession().getAttribute("loginBean");
@@ -39,5 +39,5 @@ import javax.servlet.http.HttpServletResponse;
                 }
                        chain.doFilter(req, res);
             } 
-        }
+        }*/
 }

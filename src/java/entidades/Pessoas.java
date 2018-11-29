@@ -31,6 +31,8 @@ public class Pessoas implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    int idPessoa;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "IDPESSOA")

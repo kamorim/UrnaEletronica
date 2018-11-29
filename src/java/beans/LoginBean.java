@@ -18,7 +18,7 @@ import negocio.UsuarioService;
  *
  * @author Kin Amorim
  */
-@ManagedBean
+//@ManagedBean
 @SessionScoped
 public class LoginBean implements Serializable {
     
