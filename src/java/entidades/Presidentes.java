@@ -30,7 +30,8 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Presidentes.findByIdpartido", query = "SELECT p FROM Presidentes p WHERE p.idpartido = :idpartido")
     , @NamedQuery(name = "Presidentes.findByNumcandidatopresidente", query = "SELECT p FROM Presidentes p WHERE p.numcandidatopresidente = :numcandidatopresidente")
     , @NamedQuery(name = "Presidentes.findByVicepresidente", query = "SELECT p FROM Presidentes p WHERE p.vicepresidente = :vicepresidente")
-    , @NamedQuery(name = "Presidentes.findBySloganpresidente", query = "SELECT p FROM Presidentes p WHERE p.sloganpresidente = :sloganpresidente")})
+    , @NamedQuery(name = "Presidentes.findBySloganpresidente", query = "SELECT p FROM Presidentes p WHERE p.sloganpresidente = :sloganpresidente")
+    , @NamedQuery(name = "Presidentes.exibirPresidentes", query = "SELECT pres.numcandidatopresidente, p.nomepessoa, p.sobrenomepessoa FROM pessoas p JOIN presidentes pres ON (p.IDPESSOA = pres.IDPESSOA)")})
 public class Presidentes implements Serializable {
 
     private static final long serialVersionUID = 1L;

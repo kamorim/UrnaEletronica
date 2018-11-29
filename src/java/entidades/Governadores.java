@@ -30,7 +30,9 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Governadores.findByIdpartido", query = "SELECT g FROM Governadores g WHERE g.idpartido = :idpartido")
     , @NamedQuery(name = "Governadores.findByNumcandidatogovernador", query = "SELECT g FROM Governadores g WHERE g.numcandidatogovernador = :numcandidatogovernador")
     , @NamedQuery(name = "Governadores.findByVicegovernador", query = "SELECT g FROM Governadores g WHERE g.vicegovernador = :vicegovernador")
-    , @NamedQuery(name = "Governadores.findBySlogangovernador", query = "SELECT g FROM Governadores g WHERE g.slogangovernador = :slogangovernador")})
+    , @NamedQuery(name = "Governadores.findBySlogangovernador", query = "SELECT g FROM Governadores g WHERE g.slogangovernador = :slogangovernador")
+    , @NamedQuery(name = "Governadores.exibirGovernadores", query = "SELECT gov.numcandidatogovernador, p.nomepessoa, p.sobrenomepessoa FROM pessoas p JOIN governadores gov ON (p.IDPESSOA = gov.IDPESSOA)")})
+
 public class Governadores implements Serializable {
 
     private static final long serialVersionUID = 1L;

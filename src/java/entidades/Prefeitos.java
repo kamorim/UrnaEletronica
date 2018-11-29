@@ -30,7 +30,8 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Prefeitos.findByIdpartido", query = "SELECT p FROM Prefeitos p WHERE p.idpartido = :idpartido")
     , @NamedQuery(name = "Prefeitos.findByNumprefeito", query = "SELECT p FROM Prefeitos p WHERE p.numprefeito = :numprefeito")
     , @NamedQuery(name = "Prefeitos.findByViceprefeito", query = "SELECT p FROM Prefeitos p WHERE p.viceprefeito = :viceprefeito")
-    , @NamedQuery(name = "Prefeitos.findBySloganprefeito", query = "SELECT p FROM Prefeitos p WHERE p.sloganprefeito = :sloganprefeito")})
+    , @NamedQuery(name = "Prefeitos.findBySloganprefeito", query = "SELECT p FROM Prefeitos p WHERE p.sloganprefeito = :sloganprefeito")
+    , @NamedQuery(name = "Prefeitos.exibirPrefeitos", query = "SELECT pref.numcandidatoprefeito, p.nomepessoa, p.sobrenomepessoa FROM pessoas p JOIN prefeitos pref ON (p.IDPESSOA = pref.IDPESSOA)")})
 public class Prefeitos implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,8 +63,8 @@ public class Prefeitos implements Serializable {
     private int idpartido;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "NUMPREFEITO")
-    private int numprefeito;
+    @Column(name = "NUMCANDIDATOPREFEITO")
+    private int numcandidatoprefeito;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 90)
@@ -82,11 +83,11 @@ public class Prefeitos implements Serializable {
         this.idprefeito = idprefeito;
     }
 
-    public Prefeitos(Integer idprefeito, int idpessoa, int idpartido, int numprefeito, String viceprefeito, String sloganprefeito) {
+    public Prefeitos(Integer idprefeito, int idpessoa, int idpartido, int numcandidatoprefeito, String viceprefeito, String sloganprefeito) {
         this.idprefeito = idprefeito;
         this.idpessoa = idpessoa;
         this.idpartido = idpartido;
-        this.numprefeito = numprefeito;
+        this.numcandidatoprefeito = numcandidatoprefeito;
         this.viceprefeito = viceprefeito;
         this.sloganprefeito = sloganprefeito;
     }
@@ -115,12 +116,12 @@ public class Prefeitos implements Serializable {
         this.idpartido = idpartido;
     }
 
-    public int getNumprefeito() {
-        return numprefeito;
+    public int getNumcandidatoprefeito() {
+        return numcandidatoprefeito;
     }
 
-    public void setNumprefeito(int numprefeito) {
-        this.numprefeito = numprefeito;
+    public void setNumcandidatoprefeito(int numcandidatoprefeito) {
+        this.numcandidatoprefeito = numcandidatoprefeito;
     }
 
     public String getViceprefeito() {
