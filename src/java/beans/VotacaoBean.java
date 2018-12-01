@@ -19,6 +19,7 @@ public class VotacaoBean {
     /**
      * Creates a new instance of VotacaoBean
      */
+    
     public VotacaoBean() {
     }
     
